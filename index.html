@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,25 +19,23 @@
         <form id="myForm" action="">
           <div class="control-group">
             <label for="name">Name <span>*required</span></label>
-            <input type="text" id="name" required pattern="[a-zA-Z]+" minlength="3"/>
+            <input type="text" id="name" placeholder="e.g. Joe..." required pattern="[a-zA-Z]+" minlength="3"/>
           </div>
           <div class="control-group">
             <label for="email">Email <span>*required</span></label>
-            <input type="email" id="email" required/>
+            <input type="email" id="email" placeholder="e.g. joemighty@gmail.com..." required/>
           </div>
           <div class="control-group">
             <label for="password">Password <span>*required</span></label>
-            <input type="password" id="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="20"/>
-            <!--<input type="password" id="password" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])" minlength="8" maxlength="100 "/>-->
+            <input type="password" id="password" placeholder="e.g. Mighty1..." required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="20"/>
             <!--<span class="error" aria-live="polite"></span>-->
           </div>
           <div class="control-group">
             <label for="phone">Phone</label>
-            <input type="phone" id="phone"/>
+            <input type="phone" id="phone" placeholder="e.g. 3029995555..." pattern="[0-9]{10,}" maxlength="10"/>
           </div>
           <div class="control-group">
             <label for="country">Country</label>
-            <!--<input type="country" id="country"/>-->
             <select id="country" name="country">
               <option value="">Country...</option>
             	<option value="AFG">Afghanistan</option>
@@ -291,8 +289,16 @@
             	<option value="ZWE">Zimbabwe</option>
             </select>
           </div>
-          <button type="submit">Sign Up</button>
+          <button type="submit">Register</button>
         </form>
+
+        <aside class="contactInfo">
+          <label for=""></label>
+            <p>contact information</p>
+            <p>Have questions or concerns? Reach out to us directly.</p>
+            <p><span><img class="phoneIcon" src="./assets/phone.svg" alt="Phone icon"></span>555.555.5555</p>
+            <p><span><img class="emailIcon"src="./assets/email.svg" alt="Email icon"></span>contact@formdemo.com</p>
+        </aside>
       </div>
     </section>
     <footer>

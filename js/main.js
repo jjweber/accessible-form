@@ -10,6 +10,7 @@ const countryDropdown = document.querySelector('#country');
 
 var error = document.querySelector('.error');
 
+// Creating function that passes each input to my clearfield function and resets the form.
 function resetform() {
   clearField(nameField);
   clearField(emailField);
@@ -17,8 +18,10 @@ function resetform() {
   clearField(phoneField);
 
   // Will reset dropdown for country to default
+  countryDropdown.selectedIndex = null;
 }
 
+// Creating function that takes in an input and resets it to null or default
 function clearField(input) {
   input.value = '';
 }
@@ -32,6 +35,7 @@ class CheckValidity {
     this.errors = [];
   };
 
+  // Creating function to give me the current number of errors.
   currentErrorCount() {
     return this.errors.length;
   }
@@ -45,6 +49,10 @@ class CheckValidity {
   getMessages() {
     const status = this.input.validity;
 
+    if (status.valueMissing) {
+      this.addError('This field is required to submit');
+    }
+
     if (status.typeMismatch) {
       this.addError('Entry does not match the field type');
     }
@@ -53,6 +61,7 @@ class CheckValidity {
       this.addError('Entry is too long');
     }
 
+    // Modified message to show the remaining number of letters needed to validate.
     if (status.tooShort) {
       let minLength = this.input.minLength;
       let currentInputLength = this.input.value.length;
@@ -71,10 +80,6 @@ class CheckValidity {
 
     if (this.type == "name" && !this.input.value.match(/[A-Z]/g)) {
       this.addError('Must contain at least one uppercase letter');
-    }
-
-    if (this.type == "email" && status.typeMismatch) {
-      this.addError('Does not match email type. Must follow @ format');
     }
 
     if (this.type == "password" && !this.input.value.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm)) {
@@ -124,10 +129,10 @@ nameField.addEventListener("keyup", (event) => {
   validateField(nameField, "name");
 }, false);
 
-nameField.addEventListener("focus", (event) => {
+/*nameField.addEventListener("focus", (event) => {
   console.log("Show rules for this field..");
   showRulesForField(nameField, "name");
-}, false);
+}, false);*/
 
 
 // emailField events

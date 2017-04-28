@@ -12,7 +12,6 @@ html, body {
 
 header {
   background: $secondary-background;
-  height: 90px;
   margin: $reset-space;
 }
 
@@ -36,7 +35,7 @@ header h1 {
   h1 {
     text-transform: uppercase;
     margin: $reset-space;
-    padding-top: 20px;
+    padding: 30px 0;
   }
 }
 
@@ -74,6 +73,11 @@ form {
   }
 }
 
+#phone {
+  background: $input-background;
+  border: 2px solid $input-border;
+}
+
 #country {
   width: 100%;
   height: 30px;
@@ -104,17 +108,36 @@ button {
   border: none;
   padding: 1em;
   width: 100%;
-  background: #3970E2;
-  color: $primary-color;
+  background: $accent-background;
+  color: $secondary-color;
   font-size: 1em;
   border-radius: .25em;
 }
 
+.contactInfo {
+  @extend %auto-center;
+  background: $accent-background;
+  max-width: 450px;
+  padding: 1em;
+  margin-bottom: 30px;
+
+  p {
+    color: $secondary-color;
+
+    span {
+      margin-right: 10px;
+    }
+  }
+}
+
 .error {
   color: $error-accent;
+  line-height: 1.2;
+  margin: 5px auto;
 }
 
 footer {
+  clear: both;
   width: 100%;
   background: $secondary-background;
   color: $secondary-color;
@@ -124,5 +147,37 @@ footer {
   p{
     margin: $reset-space;
     padding: 10px 0;
+  }
+}
+
+
+/* Larger Phones, Small Tablets */
+@media only screen and (min-width : 480px) {
+
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+  form {
+    display: block;
+    min-width: 50%;
+    margin-right: 20px;
+    float: left;
+  }
+  aside {
+    display: block;
+    width: 40%;
+    float: right;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+  form {
+    min-width: 50%;
+  }
+  aside {
+    min-width: 40%;
   }
 }
