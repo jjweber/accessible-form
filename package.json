@@ -1,0 +1,27 @@
+{
+  "name": "accessible-form",
+  "version": "1.0.0",
+  "description": "Project for wk4 of my DWS2 class.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "autoprefixer": "^6.7.7",
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.4.0",
+    "gulp-sass": "^3.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjweber/accessible-form.git"
+  },
+  "author": "Justin Weber",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjweber/accessible-form/issues"
+  },
+  "homepage": "https://github.com/jjweber/accessible-form#readme"
+}

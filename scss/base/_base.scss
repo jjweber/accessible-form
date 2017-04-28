@@ -1,7 +1,128 @@
-html body {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-h1 {
- color: green;
+html, body {
+  font: 16px/1.5 Helvetica Neue, Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+  @extend %reset-all-space;
+}
+
+
+header {
+  background: $secondary-background;
+  height: 90px;
+  margin: $reset-space;
+}
+
+header h1 {
+  color: $secondary-color;
+  text-transform: uppercase;
+  margin: $reset-space;
+  padding: 22px 20px;
+}
+
+#mainContent {
+  background: $primary-background;
+}
+
+.wrapper {
+  width: 90%;
+  height: 100%;
+  @extend %auto-center;
+  padding: $reset-space;
+
+  h1 {
+    text-transform: uppercase;
+    margin: $reset-space;
+    padding-top: 20px;
+  }
+}
+
+form {
+  @extend %auto-center;
+  margin-bottom: 3em;
+  max-width: 500px;
+  max-height: 900px;
+  background: $form-background;
+  padding: 2em;
+}
+
+.control-group {
+  margin-bottom: 1em;
+
+  label, input {
+    display: block;
+    width: 100%;
+  }
+
+  span {
+    color: $error-accent;
+    font-size: 12px;
+  }
+
+  label {
+    margin-bottom: .25em;
+  }
+
+  input {
+    background: $input-background;
+    border: 2px solid $input-border;
+    padding: .5em;
+    border-radius: .25em;
+  }
+}
+
+#country {
+  width: 100%;
+  height: 30px;
+}
+
+/* This is our style for the invalid fields */
+input:valid{
+  border-color: $success-accent-border;
+  background-color: $success-accent;
+}
+
+input:focus:valid {
+  outline: none;
+}
+
+/* This is our style for the invalid fields
+input:invalid{
+  border-color: $error-accent-border;
+  background-color: $error-accent;
+}
+
+input:focus:invalid {
+  outline: none;
+}
+*/
+button {
+  display: block;
+  border: none;
+  padding: 1em;
+  width: 100%;
+  background: #3970E2;
+  color: $primary-color;
+  font-size: 1em;
+  border-radius: .25em;
+}
+
+.error {
+  color: $error-accent;
+}
+
+footer {
+  width: 100%;
+  background: $secondary-background;
+  color: $secondary-color;
+  text-align: center;
+  margin: $reset-space;
+
+  p{
+    margin: $reset-space;
+    padding: 10px 0;
+  }
 }
