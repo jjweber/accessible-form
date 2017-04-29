@@ -88,11 +88,11 @@ class CheckValidity {
     }
 
     if (this.type == "password" && this.input.value == "password") {
-      this.addError('Password cannot be "password"');
+      this.addError('Password cannot be "password');
     }
 
-    if (this.type == "phone") {
-
+    if (this.type == "phone" && !this.input.value.match(/^[0-9]*$/)) {
+      this.addError('Please only enter numbers');
     }
 
     return this.errors;
@@ -128,6 +128,11 @@ function checkForValidForm() {
   validateField(emailField, "email");
   validateField(passField, "password");
 
+  if (!phoneField.value == "") {
+    validateField(phoneField, "phone");
+    console.log(phoneField.value);
+  }
+
   let errorElements = document.getElementsByClassName("error");
   if(errorElements.length) validForm = false;
 
@@ -154,9 +159,16 @@ passField.addEventListener("keyup", (event) => {
   validateField(passField, "password");
 }, false);
 
+// phoneField events
+phoneField.addEventListener("keyup", (event) => {
+  validateField(phoneField, "phone");
+  console.log("hello");
+}, false);
+
 // Setting up submit onclick listener
 submit.addEventListener("click", (event) => {
   event.preventDefault(); // this will stop the standard form submission.
+  // Doing a validity check on the click event and showing errors if they exist
   // Returns true if the form was valid
   if (checkForValidForm()) {
     alert("Form Submitted. Reseting form.");

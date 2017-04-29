@@ -4,8 +4,8 @@
 
 html, body {
   font: 16px/1.5 Helvetica Neue, Arial, sans-serif;
-  width: 100%;
-  height: 100%;
+  width: $full-size;
+  height: $full-size;
   @extend %reset-all-space;
 }
 
@@ -19,7 +19,7 @@ header h1 {
   text-transform: uppercase;
   font-size: 25px;
   margin: $reset-space;
-  padding: 22px 20px;
+  padding: 22px $med-amount;
 }
 
 #mainContent {
@@ -28,7 +28,7 @@ header h1 {
 
 .wrapper {
   width: 90%;
-  height: 100%;
+  height: $full-size;
   @extend %auto-center;
   padding: $reset-space;
 
@@ -43,7 +43,7 @@ header h1 {
 form {
   @extend %auto-center;
   margin-bottom: 3em;
-  max-width: 100%;
+  max-width: $full-size;
   max-height: 900px;
   background: $form-background;
   padding: 2em;
@@ -61,7 +61,7 @@ form {
   justify-content: center;
   align-items: center;
   margin-bottom: 3em;
-  max-width: 100%;
+  max-width: $full-size;
   height: 450px;
   background: $form-background;
   padding: 2em;
@@ -81,7 +81,7 @@ form {
 
   label, input {
     display: block;
-    width: 100%;
+    width: $full-size;
   }
 
   span {
@@ -101,13 +101,8 @@ form {
   }
 }
 
-#phone {
-  background: $input-background;
-  border: 2px solid $input-border;
-}
-
 #country {
-  width: 100%;
+  width: $full-size;
   height: 30px;
 }
 
@@ -115,7 +110,7 @@ button {
   display: block;
   border: none;
   padding: 1em;
-  width: 100%;
+  width: $full-size;
   background: $accent-background;
   color: $secondary-color;
   font-size: 1em;
@@ -124,7 +119,7 @@ button {
 
 .contactInfo {
   @extend %auto-center;
-  width: 100%;
+  width: $full-size;
 
   .asideContents {
     background: $accent-background;
@@ -135,7 +130,7 @@ button {
       color: $secondary-color;
 
       span {
-        margin-right: 10px;
+        margin-right: $small-amount;
       }
     }
   }
@@ -154,16 +149,15 @@ button {
 
 footer {
   clear: both;
-  width: 100%;
+  width: $full-size;
   background: $secondary-background;
   color: $secondary-color;
   text-align: center;
   margin: $reset-space;
-  //margin-top: 30%;
 
   p{
     margin: $reset-space;
-    padding: 10px 0;
+    padding: $small-amount 0;
   }
 }
 
@@ -177,38 +171,21 @@ input:focus:valid {
   outline: none;
 }
 
-/* This is our style for the invalid fields
-input:invalid{
-  border-color: $error-accent-border;
-  background-color: $error-accent;
-}
-
-input:focus:invalid {
-  outline: none;
-}
-*/
-
-
-/* Larger Phones, Small Tablets */
-@media only screen and (min-width : 480px) {
-
-
-}
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
   form {
     display: block;
     float: left;
-    width: 50%;
-    margin-right: 20px;
+    width: $half-size;
+    margin-right: $med-amount;
     margin-bottom: 15%;
   }
 
   #afterSuccessContents {
     float: left;
-    width: 50%;
-    margin-right: 20px;
+    width: $half-size;
+    margin-right: $med-amount;
     margin-bottom: 15%;
   }
 
@@ -231,11 +208,11 @@ input:focus:invalid {
   }
 
   form {
-    margin-bottom: 10%;
+    margin-bottom: $small-amount;
   }
 
   #afterSuccessContents {
-    margin-bottom: 10%;
+    margin-bottom: $small-amount;
   }
 
   .contactInfo {

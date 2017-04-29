@@ -75,7 +75,7 @@ form {
     display: block;
     width: 100%; }
   .control-group span {
-    color: red;
+    color: #C30000;
     font-size: 12px; }
   .control-group label {
     margin-bottom: .25em; }
@@ -84,10 +84,6 @@ form {
     border: 2px solid #d7d7d7;
     padding: .5em;
     border-radius: .25em; }
-
-#phone {
-  background: #E0E0E0;
-  border: 2px solid #d7d7d7; }
 
 #country {
   width: 100%;
@@ -98,7 +94,7 @@ button {
   border: none;
   padding: 1em;
   width: 100%;
-  background: #4990E2;
+  background: #1C5AFF;
   color: #EEE;
   font-size: 1em;
   border-radius: .25em; }
@@ -106,7 +102,7 @@ button {
 .contactInfo {
   width: 100%; }
   .contactInfo .asideContents {
-    background: #4990E2;
+    background: #1C5AFF;
     padding: 1em;
     margin-bottom: 30px; }
     .contactInfo .asideContents p {
@@ -119,7 +115,7 @@ button {
   vertical-align: middle; }
 
 .error {
-  color: red;
+  color: #C30000;
   line-height: 1.2;
   margin: 5px auto; }
 
@@ -142,17 +138,6 @@ input:valid {
 input:focus:valid {
   outline: none; }
 
-/* This is our style for the invalid fields
-input:invalid{
-  border-color: $error-accent-border;
-  background-color: $error-accent;
-}
-
-input:focus:invalid {
-  outline: none;
-}
-*/
-/* Larger Phones, Small Tablets */
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
   form {
@@ -179,8 +164,8 @@ input:focus:invalid {
   .wrapper h1 {
     font-size: 25px; }
   form {
-    margin-bottom: 10%; }
+    margin-bottom: 10px; }
   #afterSuccessContents {
-    margin-bottom: 10%; }
+    margin-bottom: 10px; }
   .contactInfo {
     margin-top: -100px; } }
