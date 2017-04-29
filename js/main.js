@@ -84,7 +84,7 @@ class CheckValidity {
     }
 
     if (this.type == "password" && !this.input.value.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm)) {
-      this.addError('Must contain at least 1 uppercase, 1 lowercase, 1 number, and 1 special character');
+      this.addError('Must contain at least 1 uppercase, 1 lowercase, and 1 number');
     }
 
     if (this.type == "password" && this.input.value == "password") {
@@ -109,7 +109,7 @@ function validateField(input, type) {
   let errorMessages = validateName.getMessages();
   let currentErrorCount = errorElements.length;
 
-  // Keep removing error elements until they are all gone. Only want 1 showing
+  // Keep removing error elements until they are all gone.
   while (errorElements.length > 0) {
     errorElements[0].parentNode.removeChild(errorElements[0]);
   }

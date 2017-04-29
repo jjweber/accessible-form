@@ -27,11 +27,11 @@
             </div>
             <div class="control-group">
               <label for="password">Password <span>*required</span></label>
-              <input type="password" id="password" placeholder="e.g. Mighty1..." required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="20"/>
+              <input type="password" id="password" placeholder="e.g. Mighty1..." required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" minlength="8" maxlength="20"/>
             </div>
             <div class="control-group">
               <label for="phone">Phone</label>
-              <input type="phone" id="phone" placeholder="e.g. 3029995555..." pattern="[0-9]{10,}" maxlength="10"/>
+              <input type="phone" id="phone" placeholder="e.g. 3029995555..." pattern="[0-9]{10,}" minlength="10" maxlength="10"/>
             </div>
             <div class="control-group">
               <label for="country">Country</label>

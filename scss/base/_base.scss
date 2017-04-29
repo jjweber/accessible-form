@@ -161,7 +161,22 @@ footer {
   }
 }
 
-/* This is our style for the valid fields */
+input:focus:required:invalid {
+  background: $error-background;
+  border-color: $error-accent-border;
+  outline: none;
+}
+
+input:focus:invalid {
+  outline: none;
+}
+
+input:focus:valid {
+  background: $success-accent;
+  border-color: $success-accent-border;
+}
+
+/* This is our style for the valid fields*/
 input:valid{
   border-color: $success-accent-border;
   background-color: $success-accent;
@@ -196,6 +211,7 @@ input:focus:valid {
     margin-top: -90px;
   }
 }
+
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {

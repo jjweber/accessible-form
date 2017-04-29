@@ -130,7 +130,19 @@ footer {
     margin: 0;
     padding: 10px 0; }
 
-/* This is our style for the valid fields */
+input:focus:required:invalid {
+  background: #ffbfbf;
+  border-color: #900;
+  outline: none; }
+
+input:focus:invalid {
+  outline: none; }
+
+input:focus:valid {
+  background: #dff0d8;
+  border-color: #2ecc71; }
+
+/* This is our style for the valid fields*/
 input:valid {
   border-color: #2ecc71;
   background-color: #dff0d8; }
