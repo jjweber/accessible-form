@@ -1,5 +1,6 @@
 // Creating variables
 const submit = document.querySelector('button');
+const form = document.querySelector('#myForm');
 const nameField = document.querySelector('#name');
 const emailField = document.querySelector('#email');
 const passField = document.querySelector('#password');
@@ -9,6 +10,7 @@ const phoneField = document.querySelector('#phone');
 const countryDropdown = document.querySelector('#country');
 
 var error = document.querySelector('.error');
+
 
 // Creating function that passes each input to my clearfield function and resets the form.
 function resetform() {
@@ -27,7 +29,6 @@ function clearField(input) {
 }
 
 // Creating my validity class
-
 class CheckValidity {
   constructor(input, type) {
     this.input = input;
@@ -99,10 +100,11 @@ class CheckValidity {
 
 };
 
-
+// Creating function to do all validity checks on all fields to prevent repetition
 function validateField(input, type) {
   let validateName = new CheckValidity(input, type);
 
+  // Finding the div for each input and searching for all elements with the class of error
   let errorElements = input.parentNode.getElementsByClassName("error");
   let errorMessages = validateName.getMessages();
   let currentErrorCount = errorElements.length;
@@ -112,40 +114,11 @@ function validateField(input, type) {
     errorElements[0].parentNode.removeChild(errorElements[0]);
   }
 
+  // looping through array and adding the messages
   errorMessages.forEach( (err) => {
     input.insertAdjacentHTML('afterend', '<p class="error">' + err + '</p>');
   });
 }
-
-function showRulesForField(input, type) {
-  //let fieldRules
-  //input.insertAdjacentHTML('afterend', '<p class="rules">' + err + '</p>');
-}
-
-// Setting up my event listeners
-
-// nameField events
-nameField.addEventListener("keyup", (event) => {
-  validateField(nameField, "name");
-}, false);
-
-/*nameField.addEventListener("focus", (event) => {
-  console.log("Show rules for this field..");
-  showRulesForField(nameField, "name");
-}, false);*/
-
-
-// emailField events
-emailField.addEventListener("keyup", (event) => {
-  validateField(emailField, "email");
-}, false);
-
-
-// passField events
-passField.addEventListener("keyup", (event) => {
-  validateField(passField, "password");
-}, false);
-
 
 function checkForValidForm() {
   let validForm = true;
@@ -161,14 +134,35 @@ function checkForValidForm() {
   return validForm;
 }
 
-// Set up submit listener
+
+// Setting up my event listeners
+
+// Using keyup events so it will re-validate as user types giving them live feedback
+
+// nameField events
+nameField.addEventListener("keyup", (event) => {
+  validateField(nameField, "name");
+}, false);
+
+// emailField events
+emailField.addEventListener("keyup", (event) => {
+  validateField(emailField, "email");
+}, false);
+
+// passField events
+passField.addEventListener("keyup", (event) => {
+  validateField(passField, "password");
+}, false);
+
+// Setting up submit onclick listener
 submit.addEventListener("click", (event) => {
   event.preventDefault(); // this will stop the standard form submission.
-
+  // Returns true if the form was valid
   if (checkForValidForm()) {
-    // returns true if the form was valid
     alert("Form Submitted. Reseting form.");
+    // I am performing a form reset to be safe, even though I am displaying a message in place of form
     resetform();
+    // Finding the form div id and replacing the inner Html with my html for the registration success message
+    document.getElementById('formBeforeSuccess').innerHTML = document.getElementById('formAfterSuccess').innerHTML;
   }
-
 });
